@@ -1,0 +1,58 @@
+rofi.lines: 5
+rofi.eh: 2
+rofi.font: "System San Francisco Display Regular" 45 
+rofi.padding: 200
+rofi.fullscreen: true
+rofi.bw: 0
+rofi.separator-style: none
+rofi.hide-scrollbar: true
+
+rofi.color-enabled: true
+rofi.color-window: argb:cc2f343f, argb:cc2f343f, argb:cc2f343f
+rofi.color-normal: argb:002f343f, #d8dee8, argb:002f343f, argb:002f343f, #bf616a
+rofi.color-active: #2f343f, #b48ead, #2f343f, #2f343f, #93e5cc
+rofi.color-urgent: #2f343f, #ebcb8b, #2f343f, #2f343f, #ebcb8b
+
+
+URxvt.font: xft:System San Francisco Display Regular:pixelsize=31, xft:System San Francisco Display Regular
+URxvt.boldFont: xft:System San Francisco Display Bold:pixelsize=31, xft:System San Francisco Display Bold
+URxvt.italicFont: xft:System San Francisco Display Italic:pixelsize=31, xft:System San Francisco Display Italic
+URxvt.letterSpace: -1
+URxvt.scrollBar: false
+
+! special
+URxvt.foreground:   #c5c8c6
+URxvt.background:   #1d1f21
+URxvt.cursorColor:  #c5c8c6
+
+! black
+URxvt.color0:       #282a2e
+URxvt.color8:       #373b41
+
+! red
+URxvt.color1:       #a54242
+URxvt.color9:       #cc6666
+
+! green
+URxvt.color2:       #8c9440
+URxvt.color10:      #b5bd68
+
+! yellow
+URxvt.color3:       #de935f
+URxvt.color11:      #f0c674
+
+! blue
+URxvt.color4:       #5f819d
+URxvt.color12:      #81a2be
+
+! magenta
+URxvt.color5:       #85678f
+URxvt.color13:      #b294bb
+
+! cyan
+URxvt.color6:       #5e8d87
+URxvt.color14:      #8abeb7
+
+! white
+URxvt.color7:       #707880
+URxvt.color15:      #c5c8c6
