@@ -13,11 +13,11 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:System San Francisco Display 8
+font pango: Ubuntu Mono 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+#font pango:DejaVu Sans Mono 8, Ubuntu Mono 10,
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -40,7 +40,7 @@ bindsym $mod+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec --no-startup-id rofi -run-list-command ". ~/.bash_aliases" -run-command "/bin/bash -i -c '{cmd}'" -show run
+bindsym $mod+d exec --no-startup-id rofi -run-list-command ". ~/.bash_aliases" -run-command "/bin/bash -i -c '{cmd}'" -show run -lines 5 -eh 2 -width 1920 -padding 500 -bw 0 -opacity 85
 
 # change focus
 bindsym $mod+j focus left
@@ -91,11 +91,18 @@ bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
-set $workspace1 "1:  Terminal"
-set $workspace2 "2:  Atom"
-set $workspace3 "3:  Chrome"
-set $workspace4 "4:  Spotify"
-set $workspace5 "5:  Telegram"
+# set $workspace1 ""
+# set $workspace2 ""
+# set $workspace3 ""
+# set $workspace4 ""
+# set $workspace5 ""
+
+set $workspace1 "1"
+set $workspace2 "2"
+set $workspace3 "3"
+set $workspace4 "4"
+set $workspace5 "5"
+
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
@@ -121,11 +128,13 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 #Assign to workspaces
-assign [class="URxvt"] $workspace1
+for_window [class="URxvt"] move to workspace $workspace1
 for_window [class="Atom"] move to workspace $workspace2
 for_window [class="Chromium-browser"] move to workspace $workspace3
+for_window [class="Google-chrome"] move to workspace $workspace3
 for_window [class="Spotify"] move to workspace $workspace4
 for_window [class="TelegramDesktop"] move to workspace $workspace5
+for_window [class="^.*"] border pixel 2
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -176,21 +185,23 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-         status_command i3blocks -c ~/.config/i3/i3blocks.conf
-         position top
-         colors {
-		          background $bg-color
-	    	      separator #757575
-          		#                  border             background         text
-          		focused_workspace  $bg-color          $bg-color          $text-color
-          		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-          		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-        }
-}
+# bar {
+#          status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#          position top
+#          colors {
+# 		          background $bg-color
+# 	    	      separator #757575
+#           		#                  border             background         text
+#           		focused_workspace  $bg-color          $bg-color          $text-color
+#           		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+#           		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+#         }
+# }
 #custom lockscreen script (check .bash_aliases)
-bindsym $mod+shift+x exec --no-startup-id /home/fil/.config/i3/scripts/lock.sh /home/fil/Pictures/lock.png
+#bindsym $mod+shift+x exec --no-startup-id /home/fil/.config/i3/scripts/lock.sh /home/fil/Pictures/lock.png
+bindsym $mod+shift+x exec betterlockscreen --lock blur
 bindsym $mod+shift+p exec poweroff
+bindsym $mod+shift+m exec reboot
 bindsym Print exec screenshot
 
 # Pulse Audio controls
@@ -208,13 +219,23 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 
-exec_always xrandr --output eDP-1-1 --scale 1.0x1.0 --dpi 280
-exec_always rxvt
-exec_always --no-startup-id feh --bg-fill ~/Pictures/background.jpg
+exec_always xrandr --output eDP-1-1 --scale 1.0x1.0 --dpi 288
+exec_always xrandr --output eDP-1 --scale 1.0x1.0 --dpi 288
+exec rxvt
+#exec_always --no-startup-id feh --bg-fill ~/Pictures/background.jpg
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
 
-exec compton -f
-exec_always --no-startup-id /home/fil/.config/i3/scripts/lock.sh /home/fil/Pictures/lock.png
+exec compton -f --config ~/.config/compton/config
+#exec --no-startup-id /home/fil/.config/i3/scripts/lock.sh /home/fil/Pictures/lock.png
+exec betterlockscreen --lock blur
 exec_always unclutter -idle 0.01 -root
+exec_always setxkbmap -option grp:alt_shift_toggle us,it
+exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
+exec_always --no-startup-id ~/.config/i3/scripts/pywal.sh
+exec_always --no-startup-id $HOME/.config/i3/scripts/polybarstart.sh
+
+gaps outer 7
+gaps inner 5
