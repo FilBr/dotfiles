@@ -17,7 +17,7 @@ font pango: Ubuntu Mono 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8, Ubuntu Mono 10,
+#font pango:DejaVu Sans Mono 8
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -91,17 +91,12 @@ bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
-# set $workspace1 ""
-# set $workspace2 ""
-# set $workspace3 ""
-# set $workspace4 ""
-# set $workspace5 ""
 
-set $workspace1 "1"
-set $workspace2 "2"
-set $workspace3 "3"
-set $workspace4 "4"
-set $workspace5 "5"
+set $workspace1 "1" # workspace1 : 
+set $workspace2 "2" # workspace2 : 
+set $workspace3 "3" # workspace3 : 
+set $workspace4 "4" # workspace4 : 
+set $workspace5 "5" # workspace5 : 
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -173,7 +168,7 @@ set $bg-color 	         #2f343f
 set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
+set $urgent-bg-color     #163935
 
 # window colors
 #                       border              background         text                 indicator
