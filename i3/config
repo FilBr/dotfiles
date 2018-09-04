@@ -17,7 +17,7 @@ font pango: Ubuntu Mono 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+#font pango:DejaVu Sans Mono 8, Ubuntu Mono 10,
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -91,12 +91,17 @@ bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
+# set $workspace1 ""
+# set $workspace2 ""
+# set $workspace3 ""
+# set $workspace4 ""
+# set $workspace5 ""
 
-set $workspace1 "1" # workspace1 : 
-set $workspace2 "2" # workspace2 : 
-set $workspace3 "3" # workspace3 : 
-set $workspace4 "4" # workspace4 : 
-set $workspace5 "5" # workspace5 : 
+set $workspace1 "1"
+set $workspace2 "2"
+set $workspace3 "3"
+set $workspace4 "4"
+set $workspace5 "5"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -168,7 +173,7 @@ set $bg-color 	         #2f343f
 set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
-set $urgent-bg-color     #163935
+set $urgent-bg-color     #E53935
 
 # window colors
 #                       border              background         text                 indicator
@@ -196,7 +201,8 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 #bindsym $mod+shift+x exec --no-startup-id /home/fil/.config/i3/scripts/lock.sh /home/fil/Pictures/lock.png
 bindsym $mod+shift+x exec betterlockscreen --lock blur
 bindsym $mod+shift+p exec poweroff
-bindsym $mod+shift+m exec reboot
+bindsym $mod+shift+Escape exec reboot
+bindsym $mod+shift+n exec $HOME/.config/i3/scripts/pywal.sh next
 bindsym Print exec screenshot
 
 # Pulse Audio controls
@@ -225,7 +231,7 @@ bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 exec compton -f --config ~/.config/compton/config
 #exec --no-startup-id /home/fil/.config/i3/scripts/lock.sh /home/fil/Pictures/lock.png
 exec betterlockscreen --lock blur
-exec_always unclutter -idle 0.01 -root
+#exec_always unclutter -idle 0.01 -root
 exec_always setxkbmap -option grp:alt_shift_toggle us,it
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
