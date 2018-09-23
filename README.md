@@ -1,1 +1,2 @@
-# dotfiles
+# dotfiles fil@br
+# COPYRIGHTED
