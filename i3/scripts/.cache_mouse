@@ -1,0 +1,46 @@
+Device 'Logitech Gaming Mouse G402':
+	Device Enabled (175):	1
+	Coordinate Transformation Matrix (177):	-1.000000, 0.000000, 1.000000, 0.000000, -1.000000, 1.000000, 0.000000, 0.000000, 1.000000
+	libinput Natural Scrolling Enabled (310):	0
+	libinput Natural Scrolling Enabled Default (311):	0
+	libinput Scroll Methods Available (312):	0, 0, 1
+	libinput Scroll Method Enabled (313):	0, 0, 0
+	libinput Scroll Method Enabled Default (314):	0, 0, 0
+	libinput Button Scrolling Button (315):	2
+	libinput Button Scrolling Button Default (316):	2
+	libinput Middle Emulation Enabled (317):	0
+	libinput Middle Emulation Enabled Default (318):	0
+	libinput Accel Speed (319):	0.000000
+	libinput Accel Speed Default (320):	0.000000
+	libinput Accel Profiles Available (321):	1, 1
+	libinput Accel Profile Enabled (322):	1, 0
+	libinput Accel Profile Enabled Default (323):	1, 0
+	libinput Left Handed Enabled (324):	0
+	libinput Left Handed Enabled Default (325):	0
+	libinput Send Events Modes Available (295):	1, 0
+	libinput Send Events Mode Enabled (296):	0, 0
+	libinput Send Events Mode Enabled Default (297):	0, 0
+	Device Node (298):	"/dev/input/event6"
+	Device Product ID (299):	1133, 49278
+	libinput Drag Lock Buttons (326):	<no items>
+	libinput Horizontal Scroll Enabled (327):	1
+Device 'Logitech Gaming Mouse G402':
+	Device Enabled (175):	1
+	Coordinate Transformation Matrix (177):	-1.000000, 0.000000, 1.000000, 0.000000, -1.000000, 1.000000, 0.000000, 0.000000, 1.000000
+	libinput Natural Scrolling Enabled (310):	0
+	libinput Natural Scrolling Enabled Default (311):	0
+	libinput Send Events Modes Available (295):	1, 0
+	libinput Send Events Mode Enabled (296):	0, 0
+	libinput Send Events Mode Enabled Default (297):	0, 0
+	Device Node (298):	"/dev/input/event7"
+	Device Product ID (299):	1133, 49278
+	libinput Drag Lock Buttons (326):	<no items>
+	libinput Horizontal Scroll Enabled (327):	1
+Device 'Logitech Gaming Mouse G402':
+	Device Enabled (175):	1
+	Coordinate Transformation Matrix (177):	1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000
+	libinput Send Events Modes Available (295):	1, 0
+	libinput Send Events Mode Enabled (296):	0, 0
+	libinput Send Events Mode Enabled Default (297):	0, 0
+	Device Node (298):	"/dev/input/event7"
+	Device Product ID (299):	1133, 49278
